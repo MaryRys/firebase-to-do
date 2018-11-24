@@ -26,6 +26,9 @@ const createNavbar = () => {
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
+      <a id="navbar-button-auth" class="nav-link">Need to Do</a>
+      </li>
+      <li class="nav-item">
         <a id="navbar-button-auth" class="nav-link">Authentication</a>
       </li>
       <li class="nav-item">
