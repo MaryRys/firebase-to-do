@@ -4,18 +4,25 @@ import taskData from '../../helpers/data/taskData';
 
 const printSingleTask = (task) => {
   const cardString = `
-  <div>
-    <h1>To Do</h1>
-    <h3>${task.task}</h3>
-    <h3>${task.isCompleted}</h3>
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">To Do</h5>
+      <p class="card-text">${task.task}</p>
+      <button class="btn btn-info edit-btn" data-edit-id=${task.id}>Edit</button>
+      <button class="btn btn-danger delete-btn" data-delete-id=${task.id}>Delete</button>
+        <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="customCheck1">
+          <label class="custom-control-label" for="customCheck1">Complete</label>
+        </div>
+    </div>
   </div>
   `;
-  $('#single-container').html(cardString);
+  $('#single-container').append(cardString);
 };
 
 const getSingleTask = (e) => {
   const taskId = e.target.dataset.dropdownId;
-  taskData(taskId)
+  taskData.getSingleTask(taskId)
     .then((singleTask) => {
       printSingleTask(singleTask);
     })
@@ -43,7 +50,7 @@ const buildDropdown = (tasksArray) => {
 
 const tasksPage = () => {
   const uid = authHelpers.getCurrentUid();
-  taskData(uid)
+  taskData.getAllTasks(uid)
     .then((tasksArray) => {
       buildDropdown(tasksArray);
     })
@@ -52,8 +59,22 @@ const tasksPage = () => {
     });
 };
 
+const deleteTask = (e) => {
+  const idToDelete = e.target.dataset.deleteId;
+  console.log(idToDelete);
+  taskData.deleteTask(idToDelete)
+    .then(() => {
+      tasksPage();
+      $('#single-container').html('');
+    })
+    .catch((error) => {
+      console.error('error in deleting task', error);
+    });
+};
+
 const bindEvents = () => {
   $('body').on('click', '.get-single', getSingleTask);
+  $('body').on('click', '.delete-btn', deleteTask);
 };
 
 const initializeNeedsPage = () => {
