@@ -1,24 +1,30 @@
+
 {
   "tasks": {
     "task1": {
       "task": "Walk the dog",
-      "isCompleted": false
+      "isCompleted": false,
+      "uid": "m2rEsQ6RKCZQTPOfn2MFjH6odIs2"
     },
     "task2": {
       "task": "Walk the dog",
-      "isCompleted": false
+      "isCompleted": false,
+      "uid": "m2rEsQ6RKCZQTPOfn2MFjH6odIs2"
     },
     "task3": {
       "task": "Walk the dog",
-      "isCompleted": false
+      "isCompleted": false,
+      "uid": "m2rEsQ6RKCZQTPOfn2MFjH6odIs2"
     },
     "task4": {
       "task": "Walk the dog",
-      "isCompleted": false
+      "isCompleted": false,
+      "uid": "m2rEsQ6RKCZQTPOfn2MFjH6odIs2"
     },
     "task5": {
       "task": "Walk the dog",
-      "isCompleted": false
+      "isCompleted": false,
+      "uid": "m2rEsQ6RKCZQTPOfn2MFjH6odIs2"
     }
   }
 }
