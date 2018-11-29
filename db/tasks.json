@@ -3,12 +3,12 @@
   "tasks": {
     "task1": {
       "task": "Walk the dog",
-      "isCompleted": false,
+      "isCompleted": true,
       "uid": "m2rEsQ6RKCZQTPOfn2MFjH6odIs2"
     },
     "task2": {
       "task": "Walk the dog",
-      "isCompleted": false,
+      "isCompleted": true,
       "uid": "m2rEsQ6RKCZQTPOfn2MFjH6odIs2"
     },
     "task3": {
