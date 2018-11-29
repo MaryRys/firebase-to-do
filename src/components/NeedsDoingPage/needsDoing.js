@@ -10,14 +10,17 @@ const printSingleTask = (task) => {
       <p class="card-text">${task.task}</p>
       <button class="btn btn-info edit-btn" data-edit-id=${task.id}>Edit</button>
       <button class="btn btn-danger delete-btn" data-delete-id=${task.id}>Delete</button>
-        <div class="custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="customCheck1">
-          <label class="custom-control-label" for="customCheck1">Complete</label>
-        </div>
+      <div class="form-check form-check-inline">
+      <label class="form-check-label" for="inlineCheckbox1">Is complete?</label>
+      <input class="form-check-input checkIsComplete" type="checkbox" id="${task.id}">
+      </div>
     </div>
   </div>
   `;
   $('#single-container').append(cardString);
+  if (task.isCompleted) {
+    $('.checkIsComplete').attr('checked', true);
+  }
 };
 
 const getSingleTask = (e) => {
@@ -72,9 +75,21 @@ const deleteTask = (e) => {
     });
 };
 
+const updateIsComplete = (e) => {
+  const taskId = e.target.id;
+  const isCompleted = e.target.checked;
+  taskData.updatedIsComplete(taskId, isCompleted)
+    .then(() => {
+    })
+    .catch((err) => {
+      console.error('error in updating flag', err);
+    });
+};
+
 const bindEvents = () => {
   $('body').on('click', '.get-single', getSingleTask);
   $('body').on('click', '.delete-btn', deleteTask);
+  $('body').on('click', '.checkIsComplete', updateIsComplete);
 };
 
 const initializeNeedsPage = () => {
