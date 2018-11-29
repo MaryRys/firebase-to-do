@@ -18,7 +18,7 @@ const printSingleTask = (task) => {
   </div>
   `;
   $('#single-container').append(cardString);
-  if (task.isComplete) {
+  if (task.isCompleted) {
     $('.checkIsComplete').attr('checked', true);
   }
 };
@@ -77,8 +77,8 @@ const deleteTask = (e) => {
 
 const updateIsComplete = (e) => {
   const taskId = e.target.id;
-  const isComplete = e.target.checked;
-  taskData.updatedIsComplete(taskId, isComplete)
+  const isCompleted = e.target.checked;
+  taskData.updatedIsComplete(taskId, isCompleted)
     .then(() => {
     })
     .catch((err) => {
