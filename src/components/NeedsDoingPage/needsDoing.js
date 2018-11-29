@@ -2,8 +2,11 @@ import $ from 'jquery';
 import authHelpers from '../../helpers/authHelpers';
 import taskData from '../../helpers/data/taskData';
 
+import './needsDoing.scss';
+
 const printSingleTask = (task) => {
   const cardString = `
+  <div class="container">
   <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">To Do</h5>
@@ -15,6 +18,7 @@ const printSingleTask = (task) => {
       <input class="form-check-input checkIsComplete" type="checkbox" id="${task.id}">
       </div>
     </div>
+  </div>
   </div>
   `;
   $('#single-container').append(cardString);
