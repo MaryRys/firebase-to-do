@@ -23,7 +23,8 @@ To run this app you will need a firebase account and a new project.
 * `npm start`
 
 ### Screenshot(s)
-To be continued...
+<img src="./src/screenshots/1.png">
+
 
 ### Contributor(s)
 Mary Rys
