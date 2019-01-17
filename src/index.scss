@@ -3,3 +3,18 @@
 body {
   background-color: lightcoral;
 }
+
+#auth {
+  align-items: center;
+}
+
+#addEditTask {
+  width: 50vw;
+  padding: 50px;
+}
+
+#single-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
